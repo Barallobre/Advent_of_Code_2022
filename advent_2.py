@@ -17,6 +17,7 @@ for character in games:
         element = ''
 
 print(plays)
+
 points = 0
 total_points = 0
 for play in plays:
@@ -42,6 +43,46 @@ for play in plays:
             points = points + 6
         elif him == 'C':
             points = points + 3
+
+    total_points = total_points + points
+    print(points)
+    points = 0
+
+print(total_points)
+
+# X means you need to lose, Y means you need to end the round in a draw, and Z means you need to win
+
+points = 0
+total_points = 0
+for play in plays:
+    print(play)
+    him = play[0]
+    me = play[-1]
+
+    if me == 'X':
+        points = points + 0
+        if him == 'A':
+            points = points + 3
+        elif him == 'B':
+            points = points + 1
+        elif him == 'C':
+            points = points + 2
+    elif me == 'Y':
+        points = points + 3
+        if him == 'A':
+            points = points + 1
+        elif him == 'B':
+            points = points + 2
+        elif him == 'C':
+            points = points + 3
+    elif me == 'Z':
+        points = points + 6
+        if him == 'A':
+            points = points + 2
+        elif him == 'B':
+            points = points + 3
+        elif him == 'C': 
+            points = points + 1
 
     total_points = total_points + points
     print(points)
