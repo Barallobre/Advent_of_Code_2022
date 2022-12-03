@@ -81,7 +81,7 @@ for play in plays:
             points = points + 2
         elif him == 'B':
             points = points + 3
-        elif him == 'C': 
+        elif him == 'C':
             points = points + 1
 
     total_points = total_points + points
