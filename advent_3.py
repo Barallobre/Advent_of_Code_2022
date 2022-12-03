@@ -19,6 +19,7 @@ print(rucksacks)
 alphabet = list(string.ascii_letters)
 print(alphabet)
 print(len(alphabet))
+
 count_odds = 0
 first_half = ''
 second_half = ''
@@ -45,3 +46,41 @@ for rucksack in rucksacks:
                 break
 
 print(points)
+
+group = []
+first_group = ''
+second_group = ''
+third_group = ''
+points_group = 0
+for rucksack in rucksacks:
+    group.append(rucksack)
+    if len(group) == 3:
+        first_group = group[0]
+        second_group = group[1]
+        third_group = group[2]
+        print(group)
+        repeated_character = ''
+        '''
+        for character in first_group:
+            if repeated_character != '':
+                break
+            for character2 in second_group:
+                if repeated_character != '':
+                    break
+                if character == character2:
+                    for character3 in third_group:
+                        if character2 == character3:
+                            repeated_character = character
+                            points_group = points_group + ((alphabet.index(character)) + 1)
+                            print(character)
+                            print((alphabet.index(character)) + 1)
+                            break
+        '''
+        for letter in alphabet:
+            if letter in first_group and letter in second_group and letter in third_group:
+                print(letter)
+                print((alphabet.index(letter)) + 1)
+                points_group = points_group + ((alphabet.index(letter)) + 1)
+        group = []
+
+print(points_group)
