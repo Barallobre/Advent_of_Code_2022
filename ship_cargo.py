@@ -1,12 +1,13 @@
-positions = [['F', 'T', 'N', 'Z', 'M', 'G', 'H', 'J'],
-             ['J', 'W', 'V'],
-             ['H', 'T', 'B', 'J', 'L', 'V', 'G'],
-             ['L', 'V', 'D', 'C', 'N', 'J', 'P', 'B'],
-             ['G', 'R', 'P', 'M', 'S', 'W', 'F'],
-             ['M', 'V', 'N', 'B', 'F', 'C', 'H', 'G'],
-             ['R', 'M', 'G', 'H', 'D'],
-             ['D', 'Z', 'V', 'M', 'N', 'H'],
-             ['H', 'F', 'N', 'G']]
+positions = [['J', 'H', 'G', 'M', 'Z', 'N', 'T', 'F'],
+             ['V', 'W', 'J'],
+             ['G', 'V', 'L', 'J', 'B', 'T', 'H'],
+             ['B', 'P', 'J', 'N', 'C', 'D', 'V', 'L'],
+             ['F', 'W', 'S', 'M', 'P', 'R', 'G'],
+             ['G', 'H', 'C', 'F', 'B', 'N', 'V', 'M'],
+             ['D', 'H', 'G', 'M', 'R'],
+             ['H', 'N', 'M', 'V', 'Z', 'D'],
+             ['G', 'N', 'F', 'H']]
+
 moves = '''move 6 from 4 to 3
 move 5 from 8 to 9
 move 1 from 4 to 5
@@ -508,4 +509,5 @@ move 3 from 2 to 8
 move 1 from 1 to 7
 move 2 from 9 to 3
 move 3 from 5 to 4
-move 2 from 8 to 6'''
+move 2 from 8 to 6
+'''
