@@ -58,14 +58,13 @@ def start_of_packet_second_part(string):
                     if idx_2 == idx and (idx != last_item
                                          and idx_2 != last_item):
                         continue
-                    elif (letter == letter_2 and
-                          ((idx != last_item and idx_2 != last_item)
-                           or (idx == last_item and idx_2 != last_item)
-                           or (idx != last_item and idx_2 == last_item))):
+                    elif idx_2 == idx and (idx == last_item
+                                           and idx_2 == last_item):
+                        mark = True
+                        break
+                    elif letter == letter_2:
                         next_letter = True
                         break
-                    elif idx == last_item and idx_2 == last_item:
-                        mark = True
 
             letters_to_compare.pop(0)
             if mark == True:
