@@ -55,8 +55,8 @@ def start_of_packet_second_part(string):
                 if next_letter == True:
                     break
                 for idx_2, letter_2 in enumerate(letters_to_compare):
-                    if idx_2 == idx and (idx != (len(letters_to_compare) - 1)
-                                         and idx_2 != (len(letters_to_compare) - 1)):
+                    if idx_2 == idx and (idx != last_item
+                                         and idx_2 != last_item):
                         continue
                     elif (letter == letter_2 and
                           ((idx != last_item and idx_2 != last_item)
@@ -64,8 +64,7 @@ def start_of_packet_second_part(string):
                            or (idx != last_item and idx_2 == last_item))):
                         next_letter = True
                         break
-                    elif (idx == len(letters_to_compare) - 1 and
-                          idx_2 == len(letters_to_compare) - 1):
+                    elif idx == last_item and idx_2 == last_item:
                         mark = True
 
             letters_to_compare.pop(0)
