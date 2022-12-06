@@ -10,21 +10,23 @@ def start_of_packet(string):
         letters_to_compare.append(character)
         counter = counter + 1
         if len(letters_to_compare) == 4:
-            print(letters_to_compare)
+
             for letter in letters_to_compare:
-                chunk_1 = letters_to_compare[1:]
-                chunk_2 = letters_to_compare[:1]
-                chunk_3 = letters_to_compare[2:]
-                chunk_4 = letters_to_compare[:2]
-                chunk_5 = letters_to_compare[3:]
-                chunk_6 = letters_to_compare[:3]
-                if letters_to_compare[0] in chunk_1:
+                wee_chunk_1 = letters_to_compare[1:]
+                wee_chunk_2 = letters_to_compare[:1]
+                wee_chunk_3 = letters_to_compare[2:]
+                wee_chunk_4 = letters_to_compare[:2]
+                wee_chunk_5 = letters_to_compare[3:]
+                wee_chunk_6 = letters_to_compare[:3]
+                if letters_to_compare[0] in wee_chunk_1:
                     break
-                elif letters_to_compare[1] in chunk_2 or letters_to_compare[1] in chunk_3:
+                elif (letters_to_compare[1] in wee_chunk_2
+                      or letters_to_compare[1] in wee_chunk_3):
                     break
-                elif letters_to_compare[2] in chunk_4 or letters_to_compare[2] in chunk_5:
+                elif (letters_to_compare[2] in wee_chunk_4
+                      or letters_to_compare[2] in wee_chunk_5):
                     break
-                elif letters_to_compare[3] in chunk_6:
+                elif letters_to_compare[3] in wee_chunk_6:
                     break
                 else:
                     mark = True
@@ -35,15 +37,43 @@ def start_of_packet(string):
     return counter
 
 
-print(start_of_packet(buffer))
+def start_of_packet_second_part(string):
+    counter = 0
+    letters_to_compare = []
 
-'''
-            if letters_to_compare[0] in letters_to_compare[1:]:
+    mark = False
+    for character in string:
+        if mark == True:
+            break
+        letters_to_compare.append(character)
+        counter = counter + 1
+        if len(letters_to_compare) == 14:
+            last_item = len(letters_to_compare) - 1
+
+            next_letter = False
+            for idx, letter in enumerate(letters_to_compare):
+                if next_letter == True:
+                    break
+                for idx_2, letter_2 in enumerate(letters_to_compare):
+                    if idx_2 == idx and (idx != (len(letters_to_compare) - 1)
+                                         and idx_2 != (len(letters_to_compare) - 1)):
+                        continue
+                    elif (letter == letter_2 and
+                          ((idx != last_item and idx_2 != last_item)
+                           or (idx == last_item and idx_2 != last_item)
+                           or (idx != last_item and idx_2 == last_item))):
+                        next_letter = True
+                        break
+                    elif (idx == len(letters_to_compare) - 1 and
+                          idx_2 == len(letters_to_compare) - 1):
+                        mark = True
+
+            letters_to_compare.pop(0)
+            if mark == True:
                 break
-            elif letters_to_compare[1] in letters_to_compare[1:]:
-                break
-            elif letters_to_compare[2] in letters_to_compare[1:]:
-                break
-            elif letters_to_compare[3] in letters_to_compare[1:]:
-                break
-            '''
+
+    return counter
+
+
+print(start_of_packet(buffer))
+print(start_of_packet_second_part(buffer))
