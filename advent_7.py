@@ -44,6 +44,7 @@ directory = ''
 for idx, pair_command in enumerate(pair_commands):
     if pair_command[0] == 'cd' and pair_command[1] != '..':
         if directory != '' and sons != []:
+            sons = list(set(sons))
             directory_and_sons[directory] = sons
         sons = []
         directory = ''
@@ -58,7 +59,7 @@ individual_sum = []
 sum_of_dir = 0
 for directory, sons in directory_and_sons.items():
     print(directory)
-    print(sons)
+    print(len(sons))
     individual_sum.append(directory)
     for size in sizes:
         if size[0] == directory:
@@ -85,4 +86,5 @@ for sum in sums:
         total_sum = total_sum + sum[1]
 
 print(sums)
+print(len(sums))
 print(total_sum)
